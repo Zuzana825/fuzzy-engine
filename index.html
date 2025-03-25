@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu v HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        nav {
+            background-color: #4CAF50;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin-top: 10px;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('intro')">Úvod</a></li>
+            <li><a href="#" onclick="showContent('hobbies')">Záľuby</a></li>
+            <li><a href="#" onclick="showContent('schedule')">Rozvrh</a></li>
+            <li><a href="#" onclick="showContent('contact')">Kontakt</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content" id="content"></div>
+
+    <script>
+        function showContent(section) {
+            const content = document.getElementById('content');
+            switch (section) {
+                case 'intro':
+                    content.innerHTML = `
+                        <h2>Úvod</h2>
+                        <p>Ahojte! Volám sa Zuzana Kriššák, mám 25 rokov a žijem v Bratislave. Mám rada technológie, prírodu a cestovanie. Pracujem ako programátorka a vo voľnom čase sa zaujímam o fotografie a hudbu. Verím, že život je plný zaujímavých možností a snažím sa ich využiť naplno!</p>
+                    `;
+                    break;
+                case 'hobbies':
+                    content.innerHTML = `
+                        <h2>Záľuby</h2>
+                        <p>Moje záľuby sú rôznorodé a zahŕňajú:</p>
+                        <ul>
+                            <li><strong>Fotografia:</strong> Rada zachytávam krásy prírody a momenty zo života. Často chodím na výlety s fotoaparátom v ruke.</li>
+                            <li><strong>Hudba:</strong> Hrávam na gitare a skladám vlastné piesne. Hudba je pre mňa veľkým zdrojom inšpirácie.</li>
+                            <li><strong>Cestovanie:</strong> Objavovanie nových miest a kultúr je pre mňa nesmierne dôležité. Mám za sebou niekoľko výletov po Európe a plánujem navštíviť Áziu.</li>
+                            <li><strong>Šport:</strong> Rada športujem, najmä beh a cyklistiku. Udržujem si tak dobrú kondíciu a zdravie.</li>
+                            <li><strong>Čítanie:</strong> Knihy sú mojou vášňou. Milujem fantasy a sci-fi literatúru, ktorá ma prenáša do iných svetov.</li>
+                        </ul>
+                        <p>Každá z týchto záľub mi prináša radosť a obohacuje môj život.</p>
+                    `;
+                    break;
+                case 'schedule':
+                    content.innerHTML = `
+                        <h2>Rozvrh</h2>
+                        <table>
+                            <tr>
+                                <th>Pondelok</th>
+                                <th>Utorok</th>
+                                <th>Streda</th>
+                                <th>Štvrtok</th>
+                                <th>Piatok</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>ANJ</td>
+                                <td>OBN</td>
+                                <td>SEM</td>
+                                <td>SEM</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>ANJ</td>
+                                <td>SEI</td>
+                                <td>SEM</td>
+                                <td>CVI</td>
+                            </tr>
+                            <tr>
+                                <td>CAJ</td>
+                                <td>SEM</td>
+                                <td>SEI</td>
+                                <td>NEJ</td>
+                                <td>CVI</td>
+                            </tr>
+                            <tr>
+                                <td>CAJ</td>
+                                <td>NEJ</td>
+                                <td>SJL</td>
+                                <td>SJL</td>
+                                <td>NEJ</td>
+                            </tr>
+                            <tr>
+                                <td>ANJ</td>
+                                <td>SEI</td>
+                                <td>MAT</td>
+                                <td>SEI</td>
+                                <td>SJL</td>
+                            </tr>
+                            <tr>
+                                <td>TSV</td>
+                                <td>MAT</td>
+                                <td>ANJ</td>
+                                <td>CVM</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TSV</td>
+                                <td>SJL</td>
+                                <td></td>
+                                <td>CVM</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    `;
+                    break;
+                case 'contact':
+                    content.innerHTML = `
+                        <h2>Kontakt</h2>
+                        <form>
+                            <label for="name">Meno:</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="message">Správa:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+
+                            <button type="submit">Odoslať</button>
+                        </form>
+                    `;
+                    break;
+                default:
+                    content.innerHTML = '<h2>Úvod</h2><p>Vitajte na našej stránke!</p>';
+            }
+        }
+
+        // Zobrazenie úvodu pri načítaní stránky
+        window.onload = function() {
+            showContent('intro');
+        };
+    </script>
+</body>
+</html>
